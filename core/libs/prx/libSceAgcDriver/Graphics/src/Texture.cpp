@@ -4185,8 +4185,18 @@ std::size_t StorageTexture::StoreSmallPending(const char* reason) {
     return stored;
 }
 
-bool StorageTexture::StoreLinearReadback(std::uint64_t address, std::size_t bytes) {
-    return FlushPending(address, bytes, nullptr, "linear readback");
+void StorageTexture::StoreLinearBeforeLabel(const char* reason) {
+    static const bool disabled = std::getenv("APS5_NO_LINEAR_READBACK_STORE") != nullptr;
+    if (disabled) return;
+    std::vector<std::pair<std::uint64_t, std::size_t>> ranges;
+    {
+        auto& pending = Pending();
+        std::lock_guard lock(pending.mutex);
+        for (const auto* texture : pending.textures) {
+            if (texture->descriptor.tileMode == TextureTileMode::kLinear) ranges.emplace_back(texture->descriptor.baseAddress, static_cast<std::size_t>(texture->guestBytes));
+        }
+    }
+    for (const auto& [address, bytes] : ranges) static_cast<void>(FlushPending(address, bytes, nullptr, reason));
 }
 
 bool StorageTexture::AnyPending() {
