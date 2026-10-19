@@ -30,6 +30,10 @@ int APS5_VABI sceGameCustomDataDialogUpdateStatus() {
 
 }
 
+#include <cstdint>
+#include "SceTypes.hpp"
+#include "prx/libc/include/General.hpp"
+
 extern "C" {
 APS5_EXPORT("QHFJB2F0p3k", Aps5LocalStub_libSceGameCustomDataDialog_0_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceGameCustomDataDialog_0_nid_no_patch(void) {

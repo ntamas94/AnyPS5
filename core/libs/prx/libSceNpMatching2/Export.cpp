@@ -150,6 +150,10 @@ int APS5_VABI sceNpMatching2Terminate() {
 
 }
 
+#include <cstdint>
+#include "SceTypes.hpp"
+#include "prx/libc/include/General.hpp"
+
 extern "C" {
 APS5_EXPORT("8btynvj0KNA", Aps5LocalStub_libSceNpMatching2_0_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceNpMatching2_0_nid_no_patch(void) {

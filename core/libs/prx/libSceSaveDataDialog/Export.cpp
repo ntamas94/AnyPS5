@@ -66,6 +66,10 @@ extern "C" {
 
 }
 
+#include <cstdint>
+#include "SceTypes.hpp"
+#include "prx/libc/include/General.hpp"
+
 extern "C" {
 APS5_EXPORT("ERKzksauAJA", Aps5LocalStub_libSceSaveDataDialog_0_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceSaveDataDialog_0_nid_no_patch(void) {

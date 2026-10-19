@@ -862,6 +862,10 @@ int APS5_VABI sceShellCoreUtilIsBgmPlaying(void) {
 
 }
 
+#include <cstdint>
+#include "SceTypes.hpp"
+#include "prx/libc/include/General.hpp"
+
 extern "C" {
 APS5_EXPORT("Mr1IgQaRff0", Aps5LocalStub_libSceSystemService_0_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceSystemService_0_nid_no_patch(void) {

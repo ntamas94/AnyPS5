@@ -169,6 +169,10 @@ int APS5_VABI sceNpAuthGetIdTokenA(int req_id, const void* param, void* token) {
 
 }
 
+#include <cstdint>
+#include "SceTypes.hpp"
+#include "prx/libc/include/General.hpp"
+
 extern "C" {
 APS5_EXPORT("CocbHVIKPE8", Aps5LocalStub_libSceNpAuth_0_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceNpAuth_0_nid_no_patch(void) {

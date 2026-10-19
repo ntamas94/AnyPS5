@@ -79,6 +79,10 @@ int APS5_VABI sceVideoOutCursorSetHotSpot() {
 
 }
 
+#include <cstdint>
+#include "SceTypes.hpp"
+#include "prx/libc/include/General.hpp"
+
 extern "C" {
 APS5_EXPORT("N1bEoJ4SRw4", Aps5LocalStub_libSceVideoOut_0_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceVideoOut_0_nid_no_patch(void) {

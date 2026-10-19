@@ -148,6 +148,10 @@ int APS5_VABI sigreturn() {
 
 }
 
+#include <cstdint>
+#include "SceTypes.hpp"
+#include "prx/libc/include/General.hpp"
+
 extern "C" {
 APS5_EXPORT("4ZeZWcMsAV0", Aps5LocalStub_libkernel_0_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libkernel_0_nid_no_patch(void) {

@@ -222,6 +222,10 @@ int APS5_VABI sceRemoteplaySetRpMode(void) {
 
 }
 
+#include <cstdint>
+#include "SceTypes.hpp"
+#include "prx/libc/include/General.hpp"
+
 extern "C" {
 APS5_EXPORT("7QLrixwVHcU", Aps5LocalStub_libSceRemoteplay_0_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceRemoteplay_0_nid_no_patch(void) {

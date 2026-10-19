@@ -180,6 +180,10 @@ int APS5_VABI sceNpWebApiUtilityParseNpId() {
 
 }
 
+#include <cstdint>
+#include "SceTypes.hpp"
+#include "prx/libc/include/General.hpp"
+
 extern "C" {
 APS5_EXPORT("3OnubUs02UM", Aps5LocalStub_libSceNpWebApi_0_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceNpWebApi_0_nid_no_patch(void) {

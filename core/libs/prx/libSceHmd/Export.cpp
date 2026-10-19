@@ -968,6 +968,10 @@ int APS5_VABI sceHmdGet2dVrCommand(std::int32_t handle, const Hmd2dVrCommandPara
 
 }
 
+#include <cstdint>
+#include "SceTypes.hpp"
+#include "prx/libc/include/General.hpp"
+
 extern "C" {
 APS5_EXPORT("+z4OJmFreZc", Aps5LocalStub_libSceHmd_0_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_0_nid_no_patch(void) {

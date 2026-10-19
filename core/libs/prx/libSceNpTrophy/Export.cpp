@@ -267,6 +267,10 @@ int APS5_VABI sceNpTrophyGetTrophyInfo() {
 
 }
 
+#include <cstdint>
+#include "SceTypes.hpp"
+#include "prx/libc/include/General.hpp"
+
 extern "C" {
 APS5_EXPORT("aTnHs7W-9Uk", Aps5LocalStub_libSceNpTrophy_0_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceNpTrophy_0_nid_no_patch(void) {

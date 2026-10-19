@@ -228,6 +228,10 @@ int APS5_VABI sceUserServiceGetNpAccountId(int user_id, uint64_t* account_id) {
 
 }
 
+#include <cstdint>
+#include "SceTypes.hpp"
+#include "prx/libc/include/General.hpp"
+
 extern "C" {
 APS5_EXPORT("spW--yoLQ9o", Aps5LocalStub_libSceUserService_0_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceUserService_0_nid_no_patch(void) {

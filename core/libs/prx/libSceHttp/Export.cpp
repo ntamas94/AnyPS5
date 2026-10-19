@@ -860,6 +860,10 @@ int APS5_VABI sceHttpSetDelayBuildRequestEnabled(int id, int enabled) {
 
 }
 
+#include <cstdint>
+#include "SceTypes.hpp"
+#include "prx/libc/include/General.hpp"
+
 extern "C" {
 APS5_EXPORT("16sMmVuOvgU", Aps5LocalStub_libSceHttp_0_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceHttp_0_nid_no_patch(void) {

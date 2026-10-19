@@ -80,6 +80,10 @@ int APS5_VABI sceNpScoreRecordScoreAsync() {
 
 }
 
+#include <cstdint>
+#include "SceTypes.hpp"
+#include "prx/libc/include/General.hpp"
+
 extern "C" {
 APS5_EXPORT("gMbOn+-6eXA", Aps5LocalStub_libSceNpScoreRanking_0_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceNpScoreRanking_0_nid_no_patch(void) {
