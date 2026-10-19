@@ -430,43 +430,41 @@ int APS5_VABI sceSaveDataUpload(void) {
 
 extern "C" {
 APS5_EXPORT("0z45PIH+SNI", Aps5LocalStub_libSceSaveData_0_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_0_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceSaveDataMount2 [libSceSaveData 0z45PIH+SNI]");
-    return 0;
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_0_nid_no_patch(const void* mount, SaveDataMountResult* result) {
+    struct Mount2 { std::int32_t user; std::int32_t pad; const SceSaveDataDirName* dir; std::uint64_t blocks; std::uint32_t mode; };
+    if (!mount) return savedata::SD_ERROR_PARAMETER;
+    const auto* m = static_cast<const Mount2*>(mount);
+    return savedata::mount_internal(m->dir, m->mode, m->blocks, m->user, result, "sceSaveDataMount2");
 }
 APS5_EXPORT("85zul--eGXs", Aps5LocalStub_libSceSaveData_1_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_1_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceSaveDataSetParam [libSceSaveData 85zul--eGXs]");
-    return 0;
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_1_nid_no_patch(const SaveDataMountPoint* mountPoint, std::uint32_t type, const void* buffer, std::size_t size) {
+    return savedata::set_param_internal(mountPoint, type, buffer, size);
 }
 APS5_EXPORT("BMR4F-Uek3E", Aps5LocalStub_libSceSaveData_2_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_2_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceSaveDataUmount [libSceSaveData BMR4F-Uek3E]");
-    return 0;
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_2_nid_no_patch(const SaveDataMountPoint* mountPoint) {
+    return savedata::umount_internal(0, mountPoint, "sceSaveDataUmount");
 }
 APS5_EXPORT("S1GkePI17zQ", Aps5LocalStub_libSceSaveData_3_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_3_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceSaveDataDelete [libSceSaveData S1GkePI17zQ]");
-    return 0;
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_3_nid_no_patch(const void* del) {
+    struct Delete { std::int32_t user; std::int32_t pad; const SceSaveDataTitleId* title; const SceSaveDataDirName* dir; };
+    if (!del) return savedata::SD_ERROR_PARAMETER;
+    const auto* d = static_cast<const Delete*>(del);
+    return savedata::delete_internal(d->user, d->dir, d->title);
 }
 APS5_EXPORT("XgvSuIdnMlw", Aps5LocalStub_libSceSaveData_4_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_4_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceSaveDataGetParam [libSceSaveData XgvSuIdnMlw]");
-    return 0;
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_4_nid_no_patch(const SaveDataMountPoint* mountPoint, std::uint32_t type, void* buffer, std::size_t size, std::size_t* gotSize) {
+    return savedata::get_param_internal(mountPoint, type, buffer, size, gotSize);
 }
 APS5_EXPORT("c88Yy54Mx0w", Aps5LocalStub_libSceSaveData_5_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_5_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceSaveDataSaveIcon [libSceSaveData c88Yy54Mx0w]");
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_5_nid_no_patch(const SaveDataMountPoint*, const SaveDataIcon*) {
     return 0;
 }
 APS5_EXPORT("cGjO3wM3V28", Aps5LocalStub_libSceSaveData_6_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_6_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceSaveDataLoadIcon [libSceSaveData cGjO3wM3V28]");
-    return 0;
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_6_nid_no_patch(const SaveDataMountPoint*, SaveDataIcon*) {
+    return savedata::SD_ERROR_NOT_FOUND;
 }
 APS5_EXPORT("dyIhnXq-0SM", Aps5LocalStub_libSceSaveData_7_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_7_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceSaveDataDirNameSearch [libSceSaveData dyIhnXq-0SM]");
-    return 0;
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_7_nid_no_patch(const SaveDataDirNameSearchCond* cond, SaveDataDirNameSearchResult* result) {
+    return savedata::dir_name_search_internal(cond, result);
 }
 }
