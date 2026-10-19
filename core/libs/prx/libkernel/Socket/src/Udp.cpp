@@ -709,7 +709,23 @@ int WaitForTransfer(Socket& socket, bool send, int flags) {
         if (socket.options.nonblocking) return 0;
         timeout = send ? socket.options.sendTimeout : socket.options.receiveTimeout;
     }
-    if (timeout == 0) return 0;
+    if (timeout == 0) {
+#ifdef _WIN32
+        NativePollDescriptor entry{};
+        entry.fd = socket.value;
+        entry.events = static_cast<short>(send ? POLLWRNORM : POLLRDNORM);
+        for (;;) {
+            int ready;
+            {
+                const TimedWait::HostWait wait;
+                ready = WSAPoll(&entry, 1, 10);
+            }
+            if (ready != 0) return 0;
+        }
+#else
+        return 0;
+#endif
+    }
     const auto deadline = std::chrono::steady_clock::now() + std::chrono::seconds(timeout >> 32) +
         std::chrono::nanoseconds((static_cast<std::int64_t>(static_cast<std::uint32_t>(timeout)) * 1000000000) >> 32);
     for (;;) {

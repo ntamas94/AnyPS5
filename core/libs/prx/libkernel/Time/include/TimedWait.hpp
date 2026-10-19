@@ -33,6 +33,15 @@ public:
 };
 
 void DeliverDeferred();
+
+class HostWait {
+public:
+    HostWait();
+    ~HostWait();
+    HostWait(const HostWait&) = delete;
+    HostWait& operator=(const HostWait&) = delete;
+};
+
 void SpinPause();
 Waiter* BeginPark(const void* key);
 bool FinishPark(const void* key, Waiter* waiter, const std::uint64_t* deadlineNanos);

@@ -391,6 +391,17 @@ void Condition::NotifyAll() {
 
 #endif
 
+#ifdef _WIN32
+HostWait::HostWait() {
+    WaitState().bound->fetch_add(1, std::memory_order_seq_cst);
+}
+
+HostWait::~HostWait() {
+    WaitState().bound->fetch_sub(1, std::memory_order_seq_cst);
+    DrainApcs();
+}
+#endif
+
 void BindThreadWaitState(std::atomic<int>* state) {
     auto& local = WaitState();
     local.bound = state != nullptr ? state : &local.own;
