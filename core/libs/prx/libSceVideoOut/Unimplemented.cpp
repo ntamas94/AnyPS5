@@ -86,17 +86,15 @@ int APS5_VABI sceVideoOutCursorSetHotSpot() {
 extern "C" {
 APS5_EXPORT("N1bEoJ4SRw4", Aps5LocalStub_libSceVideoOut_0_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceVideoOut_0_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceVideoOutConfigureOutputMode_ [libSceVideoOut N1bEoJ4SRw4]");
     return 0;
 }
 APS5_EXPORT("kGVLc3htQE8", Aps5LocalStub_libSceVideoOut_1_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceVideoOut_1_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceVideoOutGetDeviceCapabilityInfo_ [libSceVideoOut kGVLc3htQE8]");
+std::int64_t APS5_VABI Aps5LocalStub_libSceVideoOut_1_nid_no_patch(std::int32_t, void* info) {
+    if (info) *static_cast<std::uint64_t*>(info) = 0;
     return 0;
 }
 APS5_EXPORT("pjkDsgxli6c", Aps5LocalStub_libSceVideoOut_2_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceVideoOut_2_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceVideoOutModeSetAny_ [libSceVideoOut pjkDsgxli6c]");
     return 0;
 }
 }
