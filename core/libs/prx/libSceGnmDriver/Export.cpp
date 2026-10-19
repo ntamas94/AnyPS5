@@ -179,6 +179,11 @@ void Lower(std::vector<std::uint32_t>& out, std::span<const std::uint32_t> packe
             Append(out, {Header(OpAcquireMem, 6), packet[1], packet[2], 0, packet[3], 0, packet[4]});
             return;
         case OpNop:
+            if (packet.size() >= 3 && (packet[1] >> 16) == 0xc01eu) {
+                Append(out, {Header(OpSetContextReg, static_cast<std::uint32_t>(packet.size() - 1)), packet[1] & 0xffffu});
+                out.insert(out.end(), packet.begin() + 2, packet.end());
+                return;
+            }
             out.insert(out.end(), packet.begin(), packet.end());
             if (packet.size() >= 2 && (packet[1] & 0xffff0000u) == 0x68750000u) out[out.size() - packet.size() + 1] = 0;
             return;
@@ -630,8 +635,11 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_3_nid_no_patch(void) {
     return 0;
 }
 APS5_EXPORT("4v+otIIdjqg", Aps5LocalStub_libSceGnmDriver_4_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_4_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmDrawIndirect [libSceGnmDriver 4v+otIIdjqg]");
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_4_nid_no_patch(std::uint32_t* cmd, std::uint32_t size, std::uint32_t dataOffset, std::uint32_t stage, std::uint32_t vertexSgpr, std::uint32_t instanceSgpr, std::uint32_t flags) {
+    if (!cmd || size != 9 || stage >= 7 || vertexSgpr >= 0x10 || instanceSgpr >= 0x10) return -1;
+    static constexpr std::uint32_t sgprBase[7] = {0, 0, 0x4c, 0, 0xcc, 0, 0x14c};
+    Nop(Emit(cmd, 0x24, {dataOffset, vertexSgpr == 0 ? 0u : vertexSgpr + sgprBase[stage], instanceSgpr == 0 ? 0u : instanceSgpr + sgprBase[stage], 2}), 3);
+    cmd[0] |= flags & 1;
     return 0;
 }
 APS5_EXPORT("5SHGNwLXBV4", Aps5LocalStub_libSceGnmDriver_5_nid_no_patch);
@@ -677,8 +685,11 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_12_nid_no_patch(void) {
     return 0;
 }
 APS5_EXPORT("ED9-Fjr8Ta4", Aps5LocalStub_libSceGnmDriver_13_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_13_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmDrawIndexIndirect [libSceGnmDriver ED9-Fjr8Ta4]");
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_13_nid_no_patch(std::uint32_t* cmd, std::uint32_t size, std::uint32_t dataOffset, std::uint32_t stage, std::uint32_t vertexSgpr, std::uint32_t instanceSgpr, std::uint32_t flags) {
+    if (!cmd || size != 9 || stage >= 7 || vertexSgpr >= 0x10 || instanceSgpr >= 0x10) return -1;
+    static constexpr std::uint32_t sgprBase[7] = {0, 0, 0x4c, 0, 0xcc, 0, 0x14c};
+    Nop(Emit(cmd, 0x25, {dataOffset, vertexSgpr == 0 ? 0u : vertexSgpr + sgprBase[stage], instanceSgpr == 0 ? 0u : instanceSgpr + sgprBase[stage], 0}), 3);
+    cmd[0] |= flags & 1;
     return 0;
 }
 APS5_EXPORT("EJapNl2+pgU", Aps5LocalStub_libSceGnmDriver_14_nid_no_patch);
@@ -735,8 +746,11 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_24_nid_no_patch(void) {
     return 1;
 }
 APS5_EXPORT("Kx-h-nWQJ8A", Aps5LocalStub_libSceGnmDriver_25_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_25_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmSetCsShaderWithModifier [libSceGnmDriver Kx-h-nWQJ8A]");
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_25_nid_no_patch(std::uint32_t* cmd, std::uint32_t size, const std::uint32_t* regs, std::uint32_t modifier) {
+    if (!cmd || size <= 0x18 || !regs || (modifier & 0xfffffc3fu) || regs[1] != 0) return -1;
+    const std::uint32_t rsrc1 = modifier == 0 ? regs[2] : (regs[2] & 0xfffffc3fu) | modifier;
+    cmd = Emit(Emit(Emit(cmd, OpSetShReg, {0x20c, regs[0], 0}), OpSetShReg, {0x212, rsrc1, regs[3]}), OpSetShReg, {0x207, regs[4], regs[5], regs[6]});
+    Nop(cmd, 11);
     return 0;
 }
 APS5_EXPORT("MBMa6EFu4Ko", Aps5LocalStub_libSceGnmDriver_26_nid_no_patch);
@@ -805,8 +819,12 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_38_nid_no_patch(std::uint32
     return 0;
 }
 APS5_EXPORT("V31V01UiScY", Aps5LocalStub_libSceGnmDriver_39_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_39_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmUpdateVsShader [libSceGnmDriver V31V01UiScY]");
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_39_nid_no_patch(std::uint32_t* cmd, std::uint32_t size, const std::uint32_t* regs, std::uint32_t modifier) {
+    if (!cmd || size <= 0x1c || !regs || (modifier & 0xfcfffc3fu) || regs[1] != 0) return -1;
+    const std::uint32_t rsrc1 = modifier == 0 ? regs[2] : (regs[2] & 0xfcfffc3fu) | modifier;
+    cmd = Emit(Emit(cmd, OpSetShReg, {0x48, regs[0], 0}), OpSetShReg, {0x4a, rsrc1, regs[3]});
+    cmd = Emit(Emit(Emit(cmd, OpNop, {0xc01e0207u, regs[6]}), OpNop, {0xc01e01b1u, regs[4]}), OpNop, {0xc01e01c3u, regs[5]});
+    Nop(cmd, 11);
     return 0;
 }
 APS5_EXPORT("X9Omw9dwv5M", Aps5LocalStub_libSceGnmDriver_40_nid_no_patch);
@@ -820,8 +838,10 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_41_nid_no_patch(void) {
     return 0;
 }
 APS5_EXPORT("Z43vKp5k7r0", Aps5LocalStub_libSceGnmDriver_42_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_42_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmDispatchIndirect [libSceGnmDriver Z43vKp5k7r0]");
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_42_nid_no_patch(std::uint32_t* cmd, std::uint32_t size, std::uint32_t dataOffset, std::uint32_t flags) {
+    if (!cmd || size != 7) return -1;
+    Nop(Emit(cmd, 0x16, {dataOffset, (flags & 0x18) + 1}, true), 3);
+    cmd[0] |= flags & 1;
     return 0;
 }
 APS5_EXPORT("ZFqKFl23aMc", Aps5LocalStub_libSceGnmDriver_43_nid_no_patch);
@@ -856,8 +876,12 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_48_nid_no_patch(void) {
     return 0;
 }
 APS5_EXPORT("ffrNQOshows", Aps5LocalStub_libSceGnmDriver_49_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_49_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmComputeWaitOnAddress [libSceGnmDriver ffrNQOshows]");
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_49_nid_no_patch(std::uint32_t* cmd, std::uint32_t size, std::uint64_t address, std::uint32_t mask, std::uint32_t compare, std::uint32_t reference) {
+    if (!cmd || size != 0xe) return -1;
+    const std::uint32_t memory = address > 0xffffu ? 1u : 0u;
+    cmd = Nop(cmd, 3);
+    cmd = Emit(cmd, 0x3c, {(memory << 4) | (compare & 7u), static_cast<std::uint32_t>(address & (memory ? 0xfffffffcu : 0xffffu)), static_cast<std::uint32_t>(address >> 32), reference, mask, 10});
+    Nop(cmd, 2);
     return 0;
 }
 APS5_EXPORT("fhKwCVVj9nk", Aps5LocalStub_libSceGnmDriver_50_nid_no_patch);
@@ -911,8 +935,17 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_59_nid_no_patch(void) {
     return 0;
 }
 APS5_EXPORT("mLVL7N7BVBg", Aps5LocalStub_libSceGnmDriver_60_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_60_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmUpdatePsShader350 [libSceGnmDriver mLVL7N7BVBg]");
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_60_nid_no_patch(std::uint32_t* cmd, std::uint32_t size, const std::uint32_t* regs) {
+    if (!cmd || size <= 0x27) return -1;
+    if (!regs) {
+        Nop(Emit(Emit(Emit(cmd, OpSetShReg, {8, 0, 0}), OpNop, {0xc01e0203u, 0}), OpSetContextReg, {0x8f, 0xf}), 0x1d);
+        return 0;
+    }
+    if (regs[1] != 0) return -1;
+    cmd = Emit(Emit(cmd, OpSetShReg, {8, regs[0], 0}), OpSetShReg, {10, regs[2], regs[3]});
+    cmd = Emit(Emit(cmd, OpNop, {0xc01e01c4u, regs[4], regs[5]}), OpNop, {0xc01e01b3u, regs[6], regs[7]});
+    cmd = Emit(Emit(Emit(Emit(cmd, OpNop, {0xc01e01b6u, regs[8]}), OpNop, {0xc01e01b8u, regs[9]}), OpNop, {0xc01e0203u, regs[10]}), OpNop, {0xc01e008fu, regs[11]});
+    Nop(cmd, 11);
     return 0;
 }
 APS5_EXPORT("nEyFbYUloIM", Aps5LocalStub_libSceGnmDriver_61_nid_no_patch);
@@ -921,8 +954,11 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_61_nid_no_patch(void) {
     return 0;
 }
 APS5_EXPORT("nLM2i2+65hA", Aps5LocalStub_libSceGnmDriver_62_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_62_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmUpdateGsShader [libSceGnmDriver nLM2i2+65hA]");
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_62_nid_no_patch(std::uint32_t* cmd, std::uint32_t size, const std::uint32_t* regs) {
+    if (!cmd || size < 0x1d || !regs || regs[1] != 0) return -1;
+    cmd = Emit(Emit(cmd, OpSetShReg, {0x88, regs[0], 0}), OpSetShReg, {0x8a, regs[2], regs[3]});
+    cmd = Emit(Emit(Emit(cmd, OpNop, {0xc01e02e5u, regs[4]}), OpNop, {0xc01e029bu, regs[5]}), OpNop, {0xc01e02e4u, regs[6]});
+    Nop(cmd, 11);
     return 0;
 }
 APS5_EXPORT("nvEwfYAImTs", Aps5LocalStub_libSceGnmDriver_63_nid_no_patch);
