@@ -89,8 +89,9 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceVideoOut_0_nid_no_patch(void) {
     return 0;
 }
 APS5_EXPORT("kGVLc3htQE8", Aps5LocalStub_libSceVideoOut_1_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceVideoOut_1_nid_no_patch(std::int32_t, void* info) {
-    if (info) *static_cast<std::uint64_t*>(info) = 0;
+std::int64_t APS5_VABI Aps5LocalStub_libSceVideoOut_1_nid_no_patch(std::int32_t, void* info, std::uint64_t size) {
+    if (info == nullptr || size != 8) return static_cast<std::int32_t>(0x80290001u);
+    *static_cast<std::uint64_t*>(info) = 1;
     return 0;
 }
 APS5_EXPORT("pjkDsgxli6c", Aps5LocalStub_libSceVideoOut_2_nid_no_patch);
