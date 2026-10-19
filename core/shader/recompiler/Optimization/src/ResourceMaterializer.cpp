@@ -1489,6 +1489,10 @@ void materializeTables(const IrResourcePlan& plan, ResourceSnapshot& snapshot) {
             snapshot.buffers.at(i).dwords[3] = 0u;
         }
         const auto decoded = decodeBufferDescriptor(snapshot.buffers.at(i));
+        if (decoded.Type() != 0u && GcnGuestShaders()) {
+            snapshot.buffers.at(i).dwords.fill(0u);
+            continue;
+        }
         if (decoded.Type() != 0u) {
             const auto& words = snapshot.buffers.at(i).dwords;
             char detail[64];
