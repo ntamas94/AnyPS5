@@ -128,7 +128,7 @@ void storeSingleTexels(const Context& context, const ColorTarget& color) {
     Require(surface.Bytes() == color.bytes, "comp-to-single DCC keys over a color target whose layout differs from its surface");
     StorageTexture::FlushPending(color.address, color.bytes, nullptr, "comp-to-single expansion");
     std::vector<std::byte> texels(color.bytes);
-    GuestMemory::Read(color.address, texels, surface.Alignment());
+    GuestMemory::Read(color.address, texels, surface.BaseAlignment());
     constexpr std::size_t BlockBytes = 256;
     for (std::uint32_t y = 0; y < color.extent.height; ++y) {
         for (std::uint32_t x = 0; x < color.extent.width; ++x) {
@@ -137,7 +137,7 @@ void storeSingleTexels(const Context& context, const ColorTarget& color) {
             if (offset != first) std::memcpy(texels.data() + offset, texels.data() + first, color.elementBytes);
         }
     }
-    GuestMemory::Write(color.address, texels, surface.Alignment());
+    GuestMemory::Write(color.address, texels, surface.BaseAlignment());
     MarkDccUncompressed(context, color.dccAddress, color.bytes, colorKeyCount(color, color.bytes));
 }
 
@@ -238,7 +238,7 @@ void storeCmaskClearTexels(const ColorTarget& color, const CmaskLayout& layout, 
     const ColorTargetLayout surface(color.extent.width, color.extent.height, color.tileMode, color.elementBytes);
     Require(surface.Bytes() == color.bytes, "CMASK fast clear over a color target whose layout differs from its surface");
     std::vector<std::byte> texels(surface.Bytes());
-    GuestMemory::Read(color.address, texels, surface.Alignment());
+    GuestMemory::Read(color.address, texels, surface.BaseAlignment());
     const auto fill = [&](std::uint32_t tile) {
         const auto x0 = (tile % layout.TilesX()) * 8u;
         const auto y0 = (tile / layout.TilesX()) * 8u;
@@ -251,7 +251,7 @@ void storeCmaskClearTexels(const ColorTarget& color, const CmaskLayout& layout, 
     } else {
         for (std::uint32_t tile = 0; tile < layout.TilesX() * layout.TilesY(); ++tile) fill(tile);
     }
-    GuestMemory::Write(color.address, texels, surface.Alignment());
+    GuestMemory::Write(color.address, texels, surface.BaseAlignment());
 }
 
 void recordCmaskClear(const Context& context, Recorder& recorder, const HostImport& import, const ColorTarget& color, const CmaskLayout& layout, const std::shared_ptr<StorageTexture>& resident, VkImageView view) {
@@ -2291,7 +2291,7 @@ void Draw(const Context& context, const State& state, const Pm4::DrawParameters&
             binding.tiledDevice = std::make_unique<DeviceBuffer>(context, colorLayout.Bytes(), copies | VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
             binding.linearDevice = std::make_unique<DeviceBuffer>(context, colorLayout.LinearBytes(), copies | VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
             binding.original.resize(colorLayout.Bytes());
-            GuestMemory::Read(color.address, binding.original, colorLayout.Alignment());
+            GuestMemory::Read(color.address, binding.original, colorLayout.BaseAlignment());
             std::memcpy(binding.tiled->Bytes().data(), binding.original.data(), binding.original.size());
         } else {
             binding.transfer = std::make_unique<Buffer>(context, colorLayout.LinearBytes(), copies);

@@ -57,6 +57,7 @@ public:
     std::size_t Bytes() const { return bytes; }
     std::size_t LinearBytes() const { return static_cast<std::size_t>(width) * height * elementBytes; }
     std::size_t Alignment() const { return blockBytes; }
+    std::size_t BaseAlignment() const { return gcn ? 256u : blockBytes; }
     std::uint32_t BlocksPerRow() const { return pitch / blockWidth; }
     std::size_t Offset(std::uint32_t x, std::uint32_t y) const;
     void Detile(std::span<const std::byte> source, std::span<std::byte> destination) const;

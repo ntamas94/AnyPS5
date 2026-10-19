@@ -10,12 +10,12 @@ void ReadColorTarget(const ColorTarget& target, std::span<std::byte> destination
     const ColorTargetLayout layout(target.extent.width, target.extent.height, target.tileMode, target.elementBytes, target.pipeBankXor);
     Require(target.bytes == layout.Bytes() && destination.size() == layout.LinearBytes(), "color target transfer size mismatch");
     if (target.tileMode == ColorTileMode::Linear && layout.Bytes() == layout.LinearBytes()) {
-        GuestMemory::Read(target.address, destination, layout.Alignment());
+        GuestMemory::Read(target.address, destination, layout.BaseAlignment());
         return;
     }
     std::vector<std::byte> tiled(layout.Bytes());
     timing.Mark("allocate");
-    GuestMemory::Read(target.address, tiled, layout.Alignment());
+    GuestMemory::Read(target.address, tiled, layout.BaseAlignment());
     timing.Mark("guest_read");
     layout.Detile(tiled, destination);
     timing.Mark("detile");
@@ -26,16 +26,16 @@ void WriteColorTarget(const ColorTarget& target, std::span<const std::byte> sour
     const ColorTargetLayout layout(target.extent.width, target.extent.height, target.tileMode, target.elementBytes, target.pipeBankXor);
     Require(target.bytes == layout.Bytes() && source.size() == layout.LinearBytes(), "color target transfer size mismatch");
     if (target.tileMode == ColorTileMode::Linear && layout.Bytes() == layout.LinearBytes()) {
-        GuestMemory::Write(target.address, source, layout.Alignment());
+        GuestMemory::Write(target.address, source, layout.BaseAlignment());
         return;
     }
     std::vector<std::byte> tiled(layout.Bytes());
     timing.Mark("allocate");
-    GuestMemory::Read(target.address, tiled, layout.Alignment());
+    GuestMemory::Read(target.address, tiled, layout.BaseAlignment());
     timing.Mark("guest_read");
     layout.Tile(source, tiled);
     timing.Mark("tile");
-    GuestMemory::Write(target.address, tiled, layout.Alignment());
+    GuestMemory::Write(target.address, tiled, layout.BaseAlignment());
     timing.Mark("guest_write");
 }
 

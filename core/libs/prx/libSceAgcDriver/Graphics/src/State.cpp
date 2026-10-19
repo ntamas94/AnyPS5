@@ -1794,7 +1794,7 @@ ColorTarget DecodeGcnColorBuffer(const Registers& cx, std::uint32_t slot) {
         color.clearWords[word] = clear == cx.end() ? 0u : clear->second;
     }
     Require(((info >> 13u) & 1u) == 0, "PS4 color target fast clear (CMASK) is not implemented");
-    GuestMemory::CheckRange(reinterpret_cast<const void*>(color.address), color.bytes, layout.Alignment(), true);
+    GuestMemory::CheckRange(reinterpret_cast<const void*>(color.address), color.bytes, layout.BaseAlignment(), true);
     return color;
 }
 
@@ -1900,7 +1900,7 @@ ColorTarget DecodeColorBuffer(const Registers& cx, std::uint32_t slot, bool allo
     }
     color.address = color.surfaceAddress + mipOffset;
     color.bytes = colorLayout.Bytes();
-    GuestMemory::CheckRange(reinterpret_cast<const void*>(color.address), color.bytes, colorLayout.Alignment(), true);
+    GuestMemory::CheckRange(reinterpret_cast<const void*>(color.address), color.bytes, colorLayout.BaseAlignment(), true);
     color.format = decoded.format;
     color.componentMapping = decoded.componentMapping;
     color.packing = decoded.packing;
@@ -1966,7 +1966,7 @@ ColorTarget DecodeColorBuffer(const Registers& cx, std::uint32_t slot, bool allo
     }
     if (volume && (color.tileMode == ColorTileMode::RenderTarget || color.tileMode == ColorTileMode::Standard4KB)) {
         color.bytes = DescribeSurface(SurfaceForTarget(color)).guestBytes;
-        GuestMemory::CheckRange(reinterpret_cast<const void*>(color.address), color.bytes, colorLayout.Alignment(), true);
+        GuestMemory::CheckRange(reinterpret_cast<const void*>(color.address), color.bytes, colorLayout.BaseAlignment(), true);
     }
     return color;
 }

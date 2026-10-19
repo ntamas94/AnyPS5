@@ -121,7 +121,7 @@ void GpuColorTransfer::prepare(std::uint32_t newWidth, std::uint32_t newHeight, 
 void GpuColorTransfer::Upload(std::uint64_t address, std::uint32_t newWidth, std::uint32_t newHeight, ColorTileMode newMode, std::uint32_t newElementBytes) {
     prepare(newWidth, newHeight, newMode, newElementBytes);
     const ColorTargetLayout layout(width, height, mode, elementBytes);
-    GuestMemory::Read(address, tiled->Bytes(), layout.Alignment());
+    GuestMemory::Read(address, tiled->Bytes(), layout.BaseAlignment());
 }
 
 void GpuColorTransfer::convert(VkCommandBuffer commands, bool toTiled, bool swapRedBlue, bool tenBit, bool halfFloat, std::optional<float> pqWhiteNits) {
@@ -180,7 +180,7 @@ void GpuColorTransfer::WriteBack(std::uint64_t address) {
     Require(tiled != nullptr, "color transfer is not prepared for writeback");
     Require(elementBytes == 4u, "color transfer cannot write 16-bit float texels back to the guest");
     const ColorTargetLayout layout(width, height, mode, elementBytes);
-    GuestMemory::Write(address, tiled->Bytes(), layout.Alignment());
+    GuestMemory::Write(address, tiled->Bytes(), layout.BaseAlignment());
 }
 
 VkBuffer GpuColorTransfer::LinearBuffer() const {
