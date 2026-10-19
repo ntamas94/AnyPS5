@@ -894,3 +894,21 @@ int APS5_VABI sceNetCtlGetWifiInfoIpcInt(NetCtlWifiInfo* info) {
 }
 
 }
+
+extern "C" {
+APS5_EXPORT("2oUqKR5odGc", Aps5LocalStub_libSceNetCtl_0_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNetCtl_0_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNetCtlUnregisterCallbackForNpToolkit [libSceNetCtl 2oUqKR5odGc]");
+    return 0;
+}
+APS5_EXPORT("u5oqtlIP+Fw", Aps5LocalStub_libSceNetCtl_1_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNetCtl_1_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNetCtlCheckCallbackForNpToolkit [libSceNetCtl u5oqtlIP+Fw]");
+    return 0;
+}
+APS5_EXPORT("wIsKy+TfeLs", Aps5LocalStub_libSceNetCtl_2_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNetCtl_2_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNetCtlRegisterCallbackForNpToolkit [libSceNetCtl wIsKy+TfeLs]");
+    return 0;
+}
+}

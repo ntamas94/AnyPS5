@@ -21,3 +21,11 @@ int APS5_VABI sceAjmBatchStartBuffer() {
 }
 
 }
+
+extern "C" {
+APS5_EXPORT("ElslOCpOIns", Aps5LocalStub_libSceAjm_0_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceAjm_0_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceAjmBatchJobRunBufferRa [libSceAjm ElslOCpOIns]");
+    return 0;
+}
+}

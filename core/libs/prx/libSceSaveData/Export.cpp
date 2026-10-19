@@ -423,3 +423,46 @@ int APS5_VABI sceSaveDataUpload(void) {
 }
 
 }
+
+extern "C" {
+APS5_EXPORT("0z45PIH+SNI", Aps5LocalStub_libSceSaveData_0_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_0_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceSaveDataMount2 [libSceSaveData 0z45PIH+SNI]");
+    return 0;
+}
+APS5_EXPORT("85zul--eGXs", Aps5LocalStub_libSceSaveData_1_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_1_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceSaveDataSetParam [libSceSaveData 85zul--eGXs]");
+    return 0;
+}
+APS5_EXPORT("BMR4F-Uek3E", Aps5LocalStub_libSceSaveData_2_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_2_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceSaveDataUmount [libSceSaveData BMR4F-Uek3E]");
+    return 0;
+}
+APS5_EXPORT("S1GkePI17zQ", Aps5LocalStub_libSceSaveData_3_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_3_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceSaveDataDelete [libSceSaveData S1GkePI17zQ]");
+    return 0;
+}
+APS5_EXPORT("XgvSuIdnMlw", Aps5LocalStub_libSceSaveData_4_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_4_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceSaveDataGetParam [libSceSaveData XgvSuIdnMlw]");
+    return 0;
+}
+APS5_EXPORT("c88Yy54Mx0w", Aps5LocalStub_libSceSaveData_5_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_5_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceSaveDataSaveIcon [libSceSaveData c88Yy54Mx0w]");
+    return 0;
+}
+APS5_EXPORT("cGjO3wM3V28", Aps5LocalStub_libSceSaveData_6_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_6_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceSaveDataLoadIcon [libSceSaveData cGjO3wM3V28]");
+    return 0;
+}
+APS5_EXPORT("dyIhnXq-0SM", Aps5LocalStub_libSceSaveData_7_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveData_7_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceSaveDataDirNameSearch [libSceSaveData dyIhnXq-0SM]");
+    return 0;
+}
+}

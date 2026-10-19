@@ -602,3 +602,381 @@ int APS5_VABI sceGnmUnmapComputeQueue() {
 }
 
 }
+
+extern "C" {
+APS5_EXPORT("+AFvOEXrKJk", Aps5LocalStub_libSceGnmDriver_0_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_0_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmSetEmbeddedVsShader [libSceGnmDriver +AFvOEXrKJk]");
+    return 0;
+}
+APS5_EXPORT("0BzLGljcwBo", Aps5LocalStub_libSceGnmDriver_1_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_1_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDispatchDirect [libSceGnmDriver 0BzLGljcwBo]");
+    return 0;
+}
+APS5_EXPORT("4Mv9OXypBG8", Aps5LocalStub_libSceGnmDriver_2_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_2_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmFindResourcesPublic [libSceGnmDriver 4Mv9OXypBG8]");
+    return 0;
+}
+APS5_EXPORT("4PKnYXOhcx4", Aps5LocalStub_libSceGnmDriver_3_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_3_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmGetResourceBaseAddressAndSizeInBytes [libSceGnmDriver 4PKnYXOhcx4]");
+    return 0;
+}
+APS5_EXPORT("4v+otIIdjqg", Aps5LocalStub_libSceGnmDriver_4_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_4_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDrawIndirect [libSceGnmDriver 4v+otIIdjqg]");
+    return 0;
+}
+APS5_EXPORT("5SHGNwLXBV4", Aps5LocalStub_libSceGnmDriver_5_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_5_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmValidateGetDiagnostics [libSceGnmDriver 5SHGNwLXBV4]");
+    return 0;
+}
+APS5_EXPORT("5uFKckiJYRM", Aps5LocalStub_libSceGnmDriver_6_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_6_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmSetPsShader350 [libSceGnmDriver 5uFKckiJYRM]");
+    return 0;
+}
+APS5_EXPORT("5udAm+6boVg", Aps5LocalStub_libSceGnmDriver_7_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_7_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmCreateWorkloadStream [libSceGnmDriver 5udAm+6boVg]");
+    return 0;
+}
+APS5_EXPORT("6IMbpR7nTzA", Aps5LocalStub_libSceGnmDriver_8_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_8_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmQueryResourceRegistrationUserMemoryRequirements [libSceGnmDriver 6IMbpR7nTzA]");
+    return 0;
+}
+APS5_EXPORT("6YRHhh5mHCs", Aps5LocalStub_libSceGnmDriver_9_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_9_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmRequestFlipAndSubmitDoneForWorkload [libSceGnmDriver 6YRHhh5mHCs]");
+    return 0;
+}
+APS5_EXPORT("9Mv61HaMhfA", Aps5LocalStub_libSceGnmDriver_10_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_10_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmRegisterGdsResource [libSceGnmDriver 9Mv61HaMhfA]");
+    return 0;
+}
+APS5_EXPORT("A+uGq+3KFtQ", Aps5LocalStub_libSceGnmDriver_11_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_11_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmMapComputeQueueWithPriority [libSceGnmDriver A+uGq+3KFtQ]");
+    return 0;
+}
+APS5_EXPORT("BgM3t3LvcNk", Aps5LocalStub_libSceGnmDriver_12_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_12_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmValidateDisableDiagnostics2 [libSceGnmDriver BgM3t3LvcNk]");
+    return 0;
+}
+APS5_EXPORT("ED9-Fjr8Ta4", Aps5LocalStub_libSceGnmDriver_13_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_13_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDrawIndexIndirect [libSceGnmDriver ED9-Fjr8Ta4]");
+    return 0;
+}
+APS5_EXPORT("EJapNl2+pgU", Aps5LocalStub_libSceGnmDriver_14_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_14_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmComputeWaitSemaphore [libSceGnmDriver EJapNl2+pgU]");
+    return 0;
+}
+APS5_EXPORT("FFVZcCu3zWU", Aps5LocalStub_libSceGnmDriver_15_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_15_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmGetOffChipTessellationBufferSize [libSceGnmDriver FFVZcCu3zWU]");
+    return 0;
+}
+APS5_EXPORT("Fa3x75OOLRA", Aps5LocalStub_libSceGnmDriver_16_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_16_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmEndWorkload [libSceGnmDriver Fa3x75OOLRA]");
+    return 0;
+}
+APS5_EXPORT("GGsn7jMTxw4", Aps5LocalStub_libSceGnmDriver_17_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_17_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDrawIndexAuto [libSceGnmDriver GGsn7jMTxw4]");
+    return 0;
+}
+APS5_EXPORT("GNlx+y7xPdE", Aps5LocalStub_libSceGnmDriver_18_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_18_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmUpdateHsShader [libSceGnmDriver GNlx+y7xPdE]");
+    return 0;
+}
+APS5_EXPORT("Ga6r7H6Y0RI", Aps5LocalStub_libSceGnmDriver_19_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_19_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmSubmitAndFlipCommandBuffersForWorkload [libSceGnmDriver Ga6r7H6Y0RI]");
+    return 0;
+}
+APS5_EXPORT("HlTPoZ-oY7Y", Aps5LocalStub_libSceGnmDriver_20_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_20_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDrawIndex [libSceGnmDriver HlTPoZ-oY7Y]");
+    return 0;
+}
+APS5_EXPORT("HzMN7ANqYEc", Aps5LocalStub_libSceGnmDriver_21_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_21_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmValidateGetVersion [libSceGnmDriver HzMN7ANqYEc]");
+    return 0;
+}
+APS5_EXPORT("K3BKBBYKUSE", Aps5LocalStub_libSceGnmDriver_22_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_22_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmSetResourceUserData [libSceGnmDriver K3BKBBYKUSE]");
+    return 0;
+}
+APS5_EXPORT("Kl0Z3LH07QI", Aps5LocalStub_libSceGnmDriver_23_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_23_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmLogicalTcaUnitToPhysical [libSceGnmDriver Kl0Z3LH07QI]");
+    return 0;
+}
+APS5_EXPORT("KnldROUkWJY", Aps5LocalStub_libSceGnmDriver_24_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_24_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmGetNumTcaUnits [libSceGnmDriver KnldROUkWJY]");
+    return 0;
+}
+APS5_EXPORT("Kx-h-nWQJ8A", Aps5LocalStub_libSceGnmDriver_25_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_25_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmSetCsShaderWithModifier [libSceGnmDriver Kx-h-nWQJ8A]");
+    return 0;
+}
+APS5_EXPORT("MBMa6EFu4Ko", Aps5LocalStub_libSceGnmDriver_26_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_26_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmValidateResetState [libSceGnmDriver MBMa6EFu4Ko]");
+    return 0;
+}
+APS5_EXPORT("MYRtYhojKdA", Aps5LocalStub_libSceGnmDriver_27_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_27_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmResetVgtControl [libSceGnmDriver MYRtYhojKdA]");
+    return 0;
+}
+APS5_EXPORT("NfvOrNzy6sk", Aps5LocalStub_libSceGnmDriver_28_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_28_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmInsertDingDongMarker [libSceGnmDriver NfvOrNzy6sk]");
+    return 0;
+}
+APS5_EXPORT("O0S96YnD04U", Aps5LocalStub_libSceGnmDriver_29_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_29_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmGetResourceName [libSceGnmDriver O0S96YnD04U]");
+    return 0;
+}
+APS5_EXPORT("Q7t4VEYLafI", Aps5LocalStub_libSceGnmDriver_30_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_30_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmValidationRegisterMemoryCheckCallback [libSceGnmDriver Q7t4VEYLafI]");
+    return 0;
+}
+APS5_EXPORT("QJjPjlmPAL0", Aps5LocalStub_libSceGnmDriver_31_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_31_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmGetOwnerName [libSceGnmDriver QJjPjlmPAL0]");
+    return 0;
+}
+APS5_EXPORT("R6z1xM3pW-w", Aps5LocalStub_libSceGnmDriver_32_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_32_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDriverTraceInProgress [libSceGnmDriver R6z1xM3pW-w]");
+    return 0;
+}
+APS5_EXPORT("RX7XCNSaL6I", Aps5LocalStub_libSceGnmDriver_33_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_33_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmValidateGetDiagnosticInfo [libSceGnmDriver RX7XCNSaL6I]");
+    return 0;
+}
+APS5_EXPORT("SXw4dZEkgpA", Aps5LocalStub_libSceGnmDriver_34_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_34_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmValidateDisableDiagnostics [libSceGnmDriver SXw4dZEkgpA]");
+    return 0;
+}
+APS5_EXPORT("UBv7FkVfzcQ", Aps5LocalStub_libSceGnmDriver_35_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_35_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmGetResourceShaderGuid [libSceGnmDriver UBv7FkVfzcQ]");
+    return 0;
+}
+APS5_EXPORT("URDgJcXhQOs", Aps5LocalStub_libSceGnmDriver_36_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_36_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmInsertThreadTraceMarker [libSceGnmDriver URDgJcXhQOs]");
+    return 0;
+}
+APS5_EXPORT("UoBuWAhKk7U", Aps5LocalStub_libSceGnmDriver_37_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_37_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmGetResourceUserData [libSceGnmDriver UoBuWAhKk7U]");
+    return 0;
+}
+APS5_EXPORT("UtObDRQiGbs", Aps5LocalStub_libSceGnmDriver_38_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_38_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDestroyWorkloadStream [libSceGnmDriver UtObDRQiGbs]");
+    return 0;
+}
+APS5_EXPORT("V31V01UiScY", Aps5LocalStub_libSceGnmDriver_39_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_39_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmUpdateVsShader [libSceGnmDriver V31V01UiScY]");
+    return 0;
+}
+APS5_EXPORT("X9Omw9dwv5M", Aps5LocalStub_libSceGnmDriver_40_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_40_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmSetEmbeddedPsShader [libSceGnmDriver X9Omw9dwv5M]");
+    return 0;
+}
+APS5_EXPORT("XiyzNZ9J4nQ", Aps5LocalStub_libSceGnmDriver_41_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_41_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmSetWaveLimitMultipliers [libSceGnmDriver XiyzNZ9J4nQ]");
+    return 0;
+}
+APS5_EXPORT("Z43vKp5k7r0", Aps5LocalStub_libSceGnmDriver_42_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_42_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDispatchIndirect [libSceGnmDriver Z43vKp5k7r0]");
+    return 0;
+}
+APS5_EXPORT("ZFqKFl23aMc", Aps5LocalStub_libSceGnmDriver_43_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_43_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmRegisterOwner [libSceGnmDriver ZFqKFl23aMc]");
+    return 0;
+}
+APS5_EXPORT("bdqdvIkLPIU", Aps5LocalStub_libSceGnmDriver_44_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_44_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmGetResourceType [libSceGnmDriver bdqdvIkLPIU]");
+    return 0;
+}
+APS5_EXPORT("byXlqupd8cE", Aps5LocalStub_libSceGnmDriver_45_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_45_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDingDongForWorkload [libSceGnmDriver byXlqupd8cE]");
+    return 0;
+}
+APS5_EXPORT("cFCp0NX8wf0", Aps5LocalStub_libSceGnmDriver_46_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_46_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmSetVgtControl [libSceGnmDriver cFCp0NX8wf0]");
+    return 0;
+}
+APS5_EXPORT("cUCo8OvArrw", Aps5LocalStub_libSceGnmDriver_47_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_47_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDrawIndirectCountMulti [libSceGnmDriver cUCo8OvArrw]");
+    return 0;
+}
+APS5_EXPORT("dewXw5roLs0", Aps5LocalStub_libSceGnmDriver_48_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_48_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmGetPhysicalCounterFromVirtualized [libSceGnmDriver dewXw5roLs0]");
+    return 0;
+}
+APS5_EXPORT("ffrNQOshows", Aps5LocalStub_libSceGnmDriver_49_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_49_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmComputeWaitOnAddress [libSceGnmDriver ffrNQOshows]");
+    return 0;
+}
+APS5_EXPORT("fhKwCVVj9nk", Aps5LocalStub_libSceGnmDriver_50_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_50_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmUnregisterOwnerAndResources [libSceGnmDriver fhKwCVVj9nk]");
+    return 0;
+}
+APS5_EXPORT("fzJdEihTFV4", Aps5LocalStub_libSceGnmDriver_51_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_51_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmGetProtectionFaultTimeStamp [libSceGnmDriver fzJdEihTFV4]");
+    return 0;
+}
+APS5_EXPORT("hsZPf1lON7E", Aps5LocalStub_libSceGnmDriver_52_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_52_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmValidateDrawCommandBuffers [libSceGnmDriver hsZPf1lON7E]");
+    return 0;
+}
+APS5_EXPORT("iFirFzgYsvw", Aps5LocalStub_libSceGnmDriver_53_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_53_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmGetLastWaitedAddress [libSceGnmDriver iFirFzgYsvw]");
+    return 0;
+}
+APS5_EXPORT("ihxrbsoSKWc", Aps5LocalStub_libSceGnmDriver_54_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_54_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmBeginWorkload [libSceGnmDriver ihxrbsoSKWc]");
+    return 0;
+}
+APS5_EXPORT("im2ZuItabu4", Aps5LocalStub_libSceGnmDriver_55_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_55_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDrawInitToDefaultContextState400 [libSceGnmDriver im2ZuItabu4]");
+    return 0;
+}
+APS5_EXPORT("jHdPvIzlpKc", Aps5LocalStub_libSceGnmDriver_56_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_56_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDrawIndexMultiInstanced [libSceGnmDriver jHdPvIzlpKc]");
+    return 0;
+}
+APS5_EXPORT("jRcI8VcgTz4", Aps5LocalStub_libSceGnmDriver_57_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_57_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmSubmitCommandBuffersForWorkload [libSceGnmDriver jRcI8VcgTz4]");
+    return 0;
+}
+APS5_EXPORT("k7iGTvDQPLQ", Aps5LocalStub_libSceGnmDriver_58_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_58_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmGetShaderStatus [libSceGnmDriver k7iGTvDQPLQ]");
+    return 0;
+}
+APS5_EXPORT("k8EXkhIP+lM", Aps5LocalStub_libSceGnmDriver_59_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_59_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmUnregisterResource [libSceGnmDriver k8EXkhIP+lM]");
+    return 0;
+}
+APS5_EXPORT("mLVL7N7BVBg", Aps5LocalStub_libSceGnmDriver_60_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_60_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmUpdatePsShader350 [libSceGnmDriver mLVL7N7BVBg]");
+    return 0;
+}
+APS5_EXPORT("nEyFbYUloIM", Aps5LocalStub_libSceGnmDriver_61_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_61_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmGetShaderProgramBaseAddress [libSceGnmDriver nEyFbYUloIM]");
+    return 0;
+}
+APS5_EXPORT("nLM2i2+65hA", Aps5LocalStub_libSceGnmDriver_62_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_62_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmUpdateGsShader [libSceGnmDriver nLM2i2+65hA]");
+    return 0;
+}
+APS5_EXPORT("nvEwfYAImTs", Aps5LocalStub_libSceGnmDriver_63_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_63_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmRegisterResource [libSceGnmDriver nvEwfYAImTs]");
+    return 0;
+}
+APS5_EXPORT("oL4hGI1PMpw", Aps5LocalStub_libSceGnmDriver_64_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_64_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmGetGpuBlockStatus [libSceGnmDriver oL4hGI1PMpw]");
+    return 0;
+}
+APS5_EXPORT("oYM+YzfCm2Y", Aps5LocalStub_libSceGnmDriver_65_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_65_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDrawIndexOffset [libSceGnmDriver oYM+YzfCm2Y]");
+    return 0;
+}
+APS5_EXPORT("q-qhDxP67Hg", Aps5LocalStub_libSceGnmDriver_66_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_66_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmSetResourceRegistrationUserMemory [libSceGnmDriver q-qhDxP67Hg]");
+    return 0;
+}
+APS5_EXPORT("qGP74T5OWJc", Aps5LocalStub_libSceGnmDriver_67_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_67_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmValidateDispatchCommandBuffers [libSceGnmDriver qGP74T5OWJc]");
+    return 0;
+}
+APS5_EXPORT("rTIV11nMQuM", Aps5LocalStub_libSceGnmDriver_68_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_68_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmValidateOnSubmitEnabled [libSceGnmDriver rTIV11nMQuM]");
+    return 0;
+}
+APS5_EXPORT("stDSYW2SBVM", Aps5LocalStub_libSceGnmDriver_69_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_69_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDrawOpaqueAuto [libSceGnmDriver stDSYW2SBVM]");
+    return 0;
+}
+APS5_EXPORT("tZCSL5ulnB4", Aps5LocalStub_libSceGnmDriver_70_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_70_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmGetGpuInfoStatus [libSceGnmDriver tZCSL5ulnB4]");
+    return 0;
+}
+APS5_EXPORT("thbPcG7E7qk", Aps5LocalStub_libSceGnmDriver_71_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_71_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDrawIndexIndirectCountMulti [libSceGnmDriver thbPcG7E7qk]");
+    return 0;
+}
+APS5_EXPORT("wED4ZXCFJT0", Aps5LocalStub_libSceGnmDriver_72_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_72_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDispatchIndirectOnMec [libSceGnmDriver wED4ZXCFJT0]");
+    return 0;
+}
+APS5_EXPORT("yb2cRhagD1I", Aps5LocalStub_libSceGnmDriver_73_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_73_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmDrawInitDefaultHardwareState350 [libSceGnmDriver yb2cRhagD1I]");
+    return 0;
+}
+APS5_EXPORT("yhFCnaz5daw", Aps5LocalStub_libSceGnmDriver_74_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_74_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceGnmUnregisterAllResourcesForOwner [libSceGnmDriver yhFCnaz5daw]");
+    return 0;
+}
+}

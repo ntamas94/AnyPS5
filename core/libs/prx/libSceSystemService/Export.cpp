@@ -861,3 +861,16 @@ int APS5_VABI sceShellCoreUtilIsBgmPlaying(void) {
 }
 
 }
+
+extern "C" {
+APS5_EXPORT("Mr1IgQaRff0", Aps5LocalStub_libSceSystemService_0_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceSystemService_0_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceSystemServiceDisablePersonalEyeToEyeDistanceSetting [libSceSystemService Mr1IgQaRff0]");
+    return 0;
+}
+APS5_EXPORT("O3irWUQ2s-g", Aps5LocalStub_libSceSystemService_1_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceSystemService_1_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceSystemServiceEnablePersonalEyeToEyeDistanceSetting [libSceSystemService O3irWUQ2s-g]");
+    return 0;
+}
+}

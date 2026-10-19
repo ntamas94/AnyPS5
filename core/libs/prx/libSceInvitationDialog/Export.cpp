@@ -29,3 +29,16 @@ int APS5_VABI sceInvitationDialogUpdateStatus() {
 }
 
 }
+
+extern "C" {
+APS5_EXPORT("WuuUhuKOxwQ", Aps5LocalStub_libSceInvitationDialog_0_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceInvitationDialog_0_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceInvitationDialogGetResultA [libSceInvitationDialog WuuUhuKOxwQ]");
+    return 0;
+}
+APS5_EXPORT("sAxbHhAWMXM", Aps5LocalStub_libSceInvitationDialog_1_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceInvitationDialog_1_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceInvitationDialogOpenA [libSceInvitationDialog sAxbHhAWMXM]");
+    return 0;
+}
+}

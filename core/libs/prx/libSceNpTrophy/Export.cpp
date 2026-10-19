@@ -266,3 +266,21 @@ int APS5_VABI sceNpTrophyGetTrophyInfo() {
 }
 
 }
+
+extern "C" {
+APS5_EXPORT("aTnHs7W-9Uk", Aps5LocalStub_libSceNpTrophy_0_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpTrophy_0_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpTrophyAbortHandle [libSceNpTrophy aTnHs7W-9Uk]");
+    return 0;
+}
+APS5_EXPORT("cqGkYAN-gRw", Aps5LocalStub_libSceNpTrophy_1_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpTrophy_1_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpTrophyCaptureScreenshot [libSceNpTrophy cqGkYAN-gRw]");
+    return 0;
+}
+APS5_EXPORT("d9jpdPz5f-8", Aps5LocalStub_libSceNpTrophy_2_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpTrophy_2_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpTrophyShowTrophyList [libSceNpTrophy d9jpdPz5f-8]");
+    return 0;
+}
+}

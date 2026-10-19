@@ -117,3 +117,11 @@ int APS5_VABI sceNpWordFilterSanitizeComment() {
 }
 
 }
+
+extern "C" {
+APS5_EXPORT("6p9jvljuvsw", Aps5LocalStub_libSceNpUtility_0_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpUtility_0_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpWordFilterCreateTitleCtxA [libSceNpUtility 6p9jvljuvsw]");
+    return 0;
+}
+}

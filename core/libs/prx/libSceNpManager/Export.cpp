@@ -1041,3 +1041,56 @@ int APS5_VABI sceNpSnsFacebookGetAccessToken() {
 }
 
 }
+
+extern "C" {
+APS5_EXPORT("0c7HbXRKUt4", Aps5LocalStub_libSceNpManager_0_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpManager_0_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpRegisterStateCallbackForToolkit [libSceNpManager 0c7HbXRKUt4]");
+    return 0;
+}
+APS5_EXPORT("8Z2Jc5GvGDI", Aps5LocalStub_libSceNpManager_1_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpManager_1_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpCheckNpAvailabilityA [libSceNpManager 8Z2Jc5GvGDI]");
+    return 0;
+}
+APS5_EXPORT("Gaxrp3EWY-M", Aps5LocalStub_libSceNpManager_2_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpManager_2_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpNotifyPlusFeature [libSceNpManager Gaxrp3EWY-M]");
+    return 0;
+}
+APS5_EXPORT("IkL62FMpIpo", Aps5LocalStub_libSceNpManager_3_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpManager_3_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpInGameMessagePrepareA [libSceNpManager IkL62FMpIpo]");
+    return 0;
+}
+APS5_EXPORT("JELHf4xPufo", Aps5LocalStub_libSceNpManager_4_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpManager_4_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpCheckCallbackForLib [libSceNpManager JELHf4xPufo]");
+    return 0;
+}
+APS5_EXPORT("PQDFxcnqxtw", Aps5LocalStub_libSceNpManager_5_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpManager_5_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpInGameMessageSendDataA [libSceNpManager PQDFxcnqxtw]");
+    return 0;
+}
+APS5_EXPORT("Ubv+fP58W1U", Aps5LocalStub_libSceNpManager_6_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpManager_6_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpInGameMessageGetMemoryPoolStatistics [libSceNpManager Ubv+fP58W1U]");
+    return 0;
+}
+APS5_EXPORT("YIvqqvJyjEc", Aps5LocalStub_libSceNpManager_7_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpManager_7_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpUnregisterStateCallbackForToolkit [libSceNpManager YIvqqvJyjEc]");
+    return 0;
+}
+APS5_EXPORT("m9L3O6yst-U", Aps5LocalStub_libSceNpManager_8_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpManager_8_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpGetParentalControlInfoA [libSceNpManager m9L3O6yst-U]");
+    return 0;
+}
+APS5_EXPORT("r6MyYJkryz8", Aps5LocalStub_libSceNpManager_9_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpManager_9_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpCheckPlus [libSceNpManager r6MyYJkryz8]");
+    return 0;
+}
+}

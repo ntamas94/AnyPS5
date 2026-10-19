@@ -179,3 +179,41 @@ int APS5_VABI sceNpWebApiUtilityParseNpId() {
 }
 
 }
+
+extern "C" {
+APS5_EXPORT("3OnubUs02UM", Aps5LocalStub_libSceNpWebApi_0_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpWebApi_0_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpWebApiGetMemoryPoolStats [libSceNpWebApi 3OnubUs02UM]");
+    return 0;
+}
+APS5_EXPORT("KjNeZ-29ysQ", Aps5LocalStub_libSceNpWebApi_1_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpWebApi_1_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpWebApiSendRequest2 [libSceNpWebApi KjNeZ-29ysQ]");
+    return 0;
+}
+APS5_EXPORT("M2BUB+DNEGE", Aps5LocalStub_libSceNpWebApi_2_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpWebApi_2_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpWebApiCreateExtdPushEventFilter [libSceNpWebApi M2BUB+DNEGE]");
+    return 0;
+}
+APS5_EXPORT("PqCY25FMzPs", Aps5LocalStub_libSceNpWebApi_3_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpWebApi_3_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpWebApiUnregisterExtdPushEventCallback [libSceNpWebApi PqCY25FMzPs]");
+    return 0;
+}
+APS5_EXPORT("jhXKGQJ4egI", Aps5LocalStub_libSceNpWebApi_4_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpWebApi_4_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpWebApiRegisterExtdPushEventCallbackA [libSceNpWebApi jhXKGQJ4egI]");
+    return 0;
+}
+APS5_EXPORT("pfaJtb7SQ80", Aps5LocalStub_libSceNpWebApi_5_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpWebApi_5_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpWebApiDeleteExtdPushEventFilter [libSceNpWebApi pfaJtb7SQ80]");
+    return 0;
+}
+APS5_EXPORT("zk6c65xoyO0", Aps5LocalStub_libSceNpWebApi_6_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpWebApi_6_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpWebApiCreateContextA [libSceNpWebApi zk6c65xoyO0]");
+    return 0;
+}
+}

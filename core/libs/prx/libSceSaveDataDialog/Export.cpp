@@ -65,3 +65,16 @@ extern "C" {
  }
 
 }
+
+extern "C" {
+APS5_EXPORT("ERKzksauAJA", Aps5LocalStub_libSceSaveDataDialog_0_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveDataDialog_0_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceSaveDataDialogGetStatus [libSceSaveDataDialog ERKzksauAJA]");
+    return 0;
+}
+APS5_EXPORT("KK3Bdg1RWK0", Aps5LocalStub_libSceSaveDataDialog_1_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceSaveDataDialog_1_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceSaveDataDialogUpdateStatus [libSceSaveDataDialog KK3Bdg1RWK0]");
+    return 0;
+}
+}

@@ -967,3 +967,111 @@ int APS5_VABI sceHmdGet2dVrCommand(std::int32_t handle, const Hmd2dVrCommandPara
 }
 
 }
+
+extern "C" {
+APS5_EXPORT("+z4OJmFreZc", Aps5LocalStub_libSceHmd_0_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_0_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdSetupDialogTerminate [libSceHmd +z4OJmFreZc]");
+    return 0;
+}
+APS5_EXPORT("6lVRHMV5LY0", Aps5LocalStub_libSceHmd_1_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_1_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdSetupDialogGetResult [libSceHmd 6lVRHMV5LY0]");
+    return 0;
+}
+APS5_EXPORT("7as0CjXW1B8", Aps5LocalStub_libSceHmd_2_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_2_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdReprojectionSetUserEventStart [libSceHmd 7as0CjXW1B8]");
+    return 0;
+}
+APS5_EXPORT("8gH1aLgty5I", Aps5LocalStub_libSceHmd_3_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_3_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdReprojectionStartMultilayer [libSceHmd 8gH1aLgty5I]");
+    return 0;
+}
+APS5_EXPORT("E+dPfjeQLHI", Aps5LocalStub_libSceHmd_4_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_4_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdReprojectionSetDisplayBuffers [libSceHmd E+dPfjeQLHI]");
+    return 0;
+}
+APS5_EXPORT("IWybWbR-xvA", Aps5LocalStub_libSceHmd_5_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_5_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdReprojectionQueryOnionBuffAlign [libSceHmd IWybWbR-xvA]");
+    return 0;
+}
+APS5_EXPORT("LjdLRysHU6Y", Aps5LocalStub_libSceHmd_6_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_6_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdReprojectionSetOutputMinColor [libSceHmd LjdLRysHU6Y]");
+    return 0;
+}
+APS5_EXPORT("NB1Y2kA2jCY", Aps5LocalStub_libSceHmd_7_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_7_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdSetupDialogInitialize [libSceHmd NB1Y2kA2jCY]");
+    return 0;
+}
+APS5_EXPORT("NNgiV4T+akU", Aps5LocalStub_libSceHmd_8_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_8_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdSetupDialogOpen [libSceHmd NNgiV4T+akU]");
+    return 0;
+}
+APS5_EXPORT("NPQwYFqi0bs", Aps5LocalStub_libSceHmd_9_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_9_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdGetFieldOfView [libSceHmd NPQwYFqi0bs]");
+    return 0;
+}
+APS5_EXPORT("OuygGEWkins", Aps5LocalStub_libSceHmd_10_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_10_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdReprojectionInitialize [libSceHmd OuygGEWkins]");
+    return 0;
+}
+APS5_EXPORT("TkcANcGM0s8", Aps5LocalStub_libSceHmd_11_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_11_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdReprojectionQueryGarlicBuffAlign [libSceHmd TkcANcGM0s8]");
+    return 0;
+}
+APS5_EXPORT("Ud7j3+RDIBg", Aps5LocalStub_libSceHmd_12_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_12_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdSetupDialogUpdateStatus [libSceHmd Ud7j3+RDIBg]");
+    return 0;
+}
+APS5_EXPORT("ZrV5YIqD09I", Aps5LocalStub_libSceHmd_13_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_13_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdReprojectionFinalize [libSceHmd ZrV5YIqD09I]");
+    return 0;
+}
+APS5_EXPORT("iGNNpDDjcwo", Aps5LocalStub_libSceHmd_14_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_14_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdReprojectionUnsetDisplayBuffers [libSceHmd iGNNpDDjcwo]");
+    return 0;
+}
+APS5_EXPORT("kLUAkN6a1e8", Aps5LocalStub_libSceHmd_15_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_15_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdReprojectionQueryOnionBuffSize [libSceHmd kLUAkN6a1e8]");
+    return 0;
+}
+APS5_EXPORT("knyIhlkpLgE", Aps5LocalStub_libSceHmd_16_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_16_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdReprojectionSetUserEventEnd [libSceHmd knyIhlkpLgE]");
+    return 0;
+}
+APS5_EXPORT("mdyFbaJj66M", Aps5LocalStub_libSceHmd_17_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_17_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdReprojectionClearUserEventStart [libSceHmd mdyFbaJj66M]");
+    return 0;
+}
+APS5_EXPORT("nmHzU4Gh0xs", Aps5LocalStub_libSceHmd_18_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_18_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdSetupDialogClose [libSceHmd nmHzU4Gh0xs]");
+    return 0;
+}
+APS5_EXPORT("vzMEkwBQciM", Aps5LocalStub_libSceHmd_19_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_19_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdReprojectionStop [libSceHmd vzMEkwBQciM]");
+    return 0;
+}
+APS5_EXPORT("z0KtN1vqF2E", Aps5LocalStub_libSceHmd_20_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceHmd_20_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceHmdReprojectionQueryGarlicBuffSize [libSceHmd z0KtN1vqF2E]");
+    return 0;
+}
+}

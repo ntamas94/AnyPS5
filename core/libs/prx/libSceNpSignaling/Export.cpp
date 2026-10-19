@@ -44,3 +44,26 @@ int APS5_VABI sceNpSignalingTerminateConnection() {
 }
 
 }
+
+extern "C" {
+APS5_EXPORT("U8AQMlOFBc8", Aps5LocalStub_libSceNpSignaling_0_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpSignaling_0_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpSignalingGetLocalNetInfo [libSceNpSignaling U8AQMlOFBc8]");
+    return 0;
+}
+APS5_EXPORT("ZPLavCKqAB0", Aps5LocalStub_libSceNpSignaling_1_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpSignaling_1_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpSignalingActivateConnectionA [libSceNpSignaling ZPLavCKqAB0]");
+    return 0;
+}
+APS5_EXPORT("bD-JizUb3JM", Aps5LocalStub_libSceNpSignaling_2_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpSignaling_2_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpSignalingGetConnectionStatus [libSceNpSignaling bD-JizUb3JM]");
+    return 0;
+}
+APS5_EXPORT("dDLNFdY8dws", Aps5LocalStub_libSceNpSignaling_3_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpSignaling_3_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceNpSignalingCreateContextA [libSceNpSignaling dDLNFdY8dws]");
+    return 0;
+}
+}

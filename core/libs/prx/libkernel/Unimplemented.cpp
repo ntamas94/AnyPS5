@@ -147,3 +147,26 @@ int APS5_VABI sigreturn() {
 }
 
 }
+
+extern "C" {
+APS5_EXPORT("4ZeZWcMsAV0", Aps5LocalStub_libkernel_0_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libkernel_0_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("pthread_cleanup_push [libkernel 4ZeZWcMsAV0]");
+    return 0;
+}
+APS5_EXPORT("RVxb0Ssa5t0", Aps5LocalStub_libkernel_1_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libkernel_1_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("pthread_cleanup_pop [libkernel RVxb0Ssa5t0]");
+    return 0;
+}
+APS5_EXPORT("Wl2o5hOVZdw", Aps5LocalStub_libkernel_2_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libkernel_2_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceKernelPrintBacktraceWithModuleInfo [libkernel Wl2o5hOVZdw]");
+    return 0;
+}
+APS5_EXPORT("WslcK1FQcGI", Aps5LocalStub_libkernel_3_nid_no_patch);
+std::int64_t APS5_VABI Aps5LocalStub_libkernel_3_nid_no_patch(void) {
+    NotImplemented_nid_no_patch("sceKernelIsNeoMode [libkernel WslcK1FQcGI]");
+    return 0;
+}
+}
