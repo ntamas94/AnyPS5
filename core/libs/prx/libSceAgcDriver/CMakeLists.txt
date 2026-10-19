@@ -2315,6 +2315,7 @@ if(BUILD_TESTING)
     endif()
     set_tests_properties(agc_driver_pixel_implicit_derivatives PROPERTIES TIMEOUT 30)
     set_tests_properties(agc_driver_storage_file_write PROPERTIES TIMEOUT 30 ENVIRONMENT "ANYPS5_NO_SHADER_CACHE=1;APS5_SUSPEND_DRAIN=1")
+    set_tests_properties(agc_driver_clamped_global_fill PROPERTIES ENVIRONMENT "ANYPS5_NO_SHADER_CACHE=1;APS5_NO_LABEL_READBACK_STORE=1")
     set_tests_properties(agc_driver_draw_pipeline_trace PROPERTIES
             ENVIRONMENT "ANYPS5_NO_SHADER_CACHE=1;APS5_PIPELINED_DRAWS=8;APS5_TRACE_FRAMES=0:1;APS5_TRACE_EVENTS=64" TIMEOUT 30)
     set_property(TEST agc_driver_draw_pipeline_trace APPEND PROPERTY ENVIRONMENT_MODIFICATION
