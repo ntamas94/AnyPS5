@@ -239,8 +239,7 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceUserService_0_nid_no_patch(void) {
     return 0;
 }
 APS5_EXPORT("wuI7c7UNk0A", Aps5LocalStub_libSceUserService_1_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceUserService_1_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceUserServiceRegisterEventCallback [libSceUserService wuI7c7UNk0A]");
+std::int64_t APS5_VABI Aps5LocalStub_libSceUserService_1_nid_no_patch(void*, void*) {
     return 0;
 }
 }

@@ -8,13 +8,13 @@ int APS5_VABI sceNpSignalingActivateConnection() {
     return 0;
 }
 
-int APS5_VABI sceNpSignalingCreateContext() {
-    NotImplemented_nid_no_patch(__func__);
+int APS5_VABI sceNpSignalingCreateContext(const void*, void*, void*, std::uint32_t* context) {
+    if (!context) return -1;
+    *context = 1;
     return 0;
 }
 
-int APS5_VABI sceNpSignalingDeleteContext() {
-    NotImplemented_nid_no_patch(__func__);
+int APS5_VABI sceNpSignalingDeleteContext(std::uint32_t) {
     return 0;
 }
 
@@ -23,18 +23,15 @@ int APS5_VABI sceNpSignalingGetConnectionInfo() {
     return 0;
 }
 
-int APS5_VABI sceNpSignalingInitialize() {
-    NotImplemented_nid_no_patch(__func__);
+int APS5_VABI sceNpSignalingInitialize(std::int64_t, std::int32_t, std::int32_t, std::int64_t) {
     return 0;
 }
 
-int APS5_VABI sceNpSignalingSetContextOption() {
-    NotImplemented_nid_no_patch(__func__);
+int APS5_VABI sceNpSignalingSetContextOption(std::uint32_t, std::int32_t, std::int32_t) {
     return 0;
 }
 
 int APS5_VABI sceNpSignalingTerminate() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -51,8 +48,10 @@ int APS5_VABI sceNpSignalingTerminateConnection() {
 
 extern "C" {
 APS5_EXPORT("U8AQMlOFBc8", Aps5LocalStub_libSceNpSignaling_0_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceNpSignaling_0_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceNpSignalingGetLocalNetInfo [libSceNpSignaling U8AQMlOFBc8]");
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpSignaling_0_nid_no_patch(std::uint32_t, void* info) {
+    if (!info) return -1;
+    auto* words = static_cast<std::uint32_t*>(info);
+    words[2] = words[3] = words[4] = 0;
     return 0;
 }
 APS5_EXPORT("ZPLavCKqAB0", Aps5LocalStub_libSceNpSignaling_1_nid_no_patch);
@@ -66,8 +65,9 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceNpSignaling_2_nid_no_patch(void) {
     return 0;
 }
 APS5_EXPORT("dDLNFdY8dws", Aps5LocalStub_libSceNpSignaling_3_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceNpSignaling_3_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceNpSignalingCreateContextA [libSceNpSignaling dDLNFdY8dws]");
+std::int64_t APS5_VABI Aps5LocalStub_libSceNpSignaling_3_nid_no_patch(std::int32_t, void*, void*, std::uint32_t* context) {
+    if (!context) return -1;
+    *context = 1;
     return 0;
 }
 }
