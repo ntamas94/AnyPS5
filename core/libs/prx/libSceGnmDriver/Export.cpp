@@ -556,9 +556,8 @@ int APS5_VABI sceGnmGetEqTimeStamp() {
     return 0;
 }
 
-int APS5_VABI sceGnmGetTheTessellationFactorRingBufferBaseAddress() {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+std::uint64_t APS5_VABI sceGnmGetTheTessellationFactorRingBufferBaseAddress() {
+    return 0xFF0000000ull;
 }
 
 int APS5_VABI sceGnmLogicalCuIndexToPhysicalCuIndex() {
@@ -644,8 +643,8 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_6_nid_no_patch(void) {
     return 0;
 }
 APS5_EXPORT("5udAm+6boVg", Aps5LocalStub_libSceGnmDriver_7_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_7_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmCreateWorkloadStream [libSceGnmDriver 5udAm+6boVg]");
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_7_nid_no_patch(const char*, std::uint32_t* stream) {
+    if (stream) *stream = 1;
     return 0;
 }
 APS5_EXPORT("6IMbpR7nTzA", Aps5LocalStub_libSceGnmDriver_8_nid_no_patch);
@@ -685,12 +684,10 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_14_nid_no_patch(void) {
 }
 APS5_EXPORT("FFVZcCu3zWU", Aps5LocalStub_libSceGnmDriver_15_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_15_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmGetOffChipTessellationBufferSize [libSceGnmDriver FFVZcCu3zWU]");
-    return 0;
+    return 0x800000;
 }
 APS5_EXPORT("Fa3x75OOLRA", Aps5LocalStub_libSceGnmDriver_16_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_16_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmEndWorkload [libSceGnmDriver Fa3x75OOLRA]");
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_16_nid_no_patch(std::uint64_t) {
     return 0;
 }
 APS5_EXPORT("GGsn7jMTxw4", Aps5LocalStub_libSceGnmDriver_17_nid_no_patch);
@@ -704,9 +701,8 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_18_nid_no_patch(void) {
     return 0;
 }
 APS5_EXPORT("Ga6r7H6Y0RI", Aps5LocalStub_libSceGnmDriver_19_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_19_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmSubmitAndFlipCommandBuffersForWorkload [libSceGnmDriver Ga6r7H6Y0RI]");
-    return 0;
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_19_nid_no_patch(std::uint64_t, std::uint32_t count, std::uint32_t* const* dcbs, const std::uint32_t* dcbBytes, std::uint32_t* const* ccbs, const std::uint32_t* ccbBytes, std::uint32_t handle, std::uint32_t index, std::uint32_t flipMode, std::int64_t flipArg) {
+    return sceGnmSubmitAndFlipCommandBuffers(count, dcbs, dcbBytes, ccbs, ccbBytes, handle, index, flipMode, flipArg);
 }
 APS5_EXPORT("HlTPoZ-oY7Y", Aps5LocalStub_libSceGnmDriver_20_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_20_nid_no_patch(void) {
@@ -730,8 +726,7 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_23_nid_no_patch(void) {
 }
 APS5_EXPORT("KnldROUkWJY", Aps5LocalStub_libSceGnmDriver_24_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_24_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmGetNumTcaUnits [libSceGnmDriver KnldROUkWJY]");
-    return 0;
+    return 1;
 }
 APS5_EXPORT("Kx-h-nWQJ8A", Aps5LocalStub_libSceGnmDriver_25_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_25_nid_no_patch(void) {
@@ -799,8 +794,7 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_37_nid_no_patch(void) {
     return 0;
 }
 APS5_EXPORT("UtObDRQiGbs", Aps5LocalStub_libSceGnmDriver_38_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_38_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmDestroyWorkloadStream [libSceGnmDriver UtObDRQiGbs]");
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_38_nid_no_patch(std::uint32_t) {
     return 0;
 }
 APS5_EXPORT("V31V01UiScY", Aps5LocalStub_libSceGnmDriver_39_nid_no_patch);
@@ -879,9 +873,10 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_53_nid_no_patch(void) {
     return 0;
 }
 APS5_EXPORT("ihxrbsoSKWc", Aps5LocalStub_libSceGnmDriver_54_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_54_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmBeginWorkload [libSceGnmDriver ihxrbsoSKWc]");
-    return 0;
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_54_nid_no_patch(std::uint32_t stream, std::uint64_t* workload) {
+    const bool known = stream == 1;
+    if (workload) *workload = known ? 1 : 0;
+    return known ? 0 : 1;
 }
 APS5_EXPORT("im2ZuItabu4", Aps5LocalStub_libSceGnmDriver_55_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_55_nid_no_patch(void) {
@@ -894,9 +889,8 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_56_nid_no_patch(void) {
     return 0;
 }
 APS5_EXPORT("jRcI8VcgTz4", Aps5LocalStub_libSceGnmDriver_57_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_57_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmSubmitCommandBuffersForWorkload [libSceGnmDriver jRcI8VcgTz4]");
-    return 0;
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_57_nid_no_patch(std::uint64_t, std::uint32_t count, std::uint32_t* const* dcbs, const std::uint32_t* dcbBytes, std::uint32_t* const* ccbs, const std::uint32_t* ccbBytes) {
+    return sceGnmSubmitCommandBuffers(count, dcbs, dcbBytes, ccbs, ccbBytes);
 }
 APS5_EXPORT("k7iGTvDQPLQ", Aps5LocalStub_libSceGnmDriver_58_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_58_nid_no_patch(void) {
@@ -974,9 +968,23 @@ std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_72_nid_no_patch(void) {
     return 0;
 }
 APS5_EXPORT("yb2cRhagD1I", Aps5LocalStub_libSceGnmDriver_73_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_73_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceGnmDrawInitDefaultHardwareState350 [libSceGnmDriver yb2cRhagD1I]");
-    return 0;
+std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_73_nid_no_patch(std::uint32_t* cmd, std::uint32_t size) {
+    if (size < HwInitPacketWords) return 0;
+    auto* at = Emit(cmd, OpContextControl, {0x80000000u, 0x80000000u});
+    at = Emit(at, OpClearState, {0});
+    at = Emit(at, OpAcquireMem, {0x2ec47fc0u, 0xffffffffu, 0, 0, 0, 10});
+    at = SetRegisters(at, OpSetShReg, {{0x216, 0xffffffffu}, {0x217, 0xffffffffu}, {0x215, 0}});
+    at = SetRegisters(at, OpSetContextReg, {{0x2f9, 0x2d}, {0x282, 8}, {0x280, 0x80008}, {0x281, 0xffff0000u}, {0x204, 0}, {0x206, 0x43f}, {0x83, 0xffff}, {0x317, 0x10},
+        {0x2fa, 0x3f800000u}, {0x2fc, 0x3f800000u}, {0x2fb, 0x3f800000u}, {0x2fd, 0x3f800000u}, {0x202, 0xcc0010}, {0x30e, 0xffffffffu}, {0x30f, 0xffffffffu}});
+    at = Emit(at, OpNumInstances, {1});
+    at = SetRegisters(at, OpSetShReg, {{7, 0x1701ff}, {0x46, 0x1701fd}, {0x87, 0x1701ff}, {0xc7, 0x1701fd}, {0x107, 0x17}, {0x147, 0x1701fd}, {0x47, 0x1c}});
+    at = SetRegisters(at, OpSetContextReg, {{0x1b1, 2}, {0x101, 0}, {0x100, 0xffffffffu}, {0x103, 0}, {0x284, 0}, {0x290, 0}, {0x2ae, 0}, {0x102, 0}, {0x292, 0}, {0x293, 0x6020000},
+        {0x2f8, 0}, {0x2de, 0x1e9}});
+    at = Emit(at, OpSetContextReg, {0x295, 0x100, 0x100, 4});
+    at = Emit(at, OpSetUconfigReg, {0x200, 0xe0000000u});
+    at = Emit(at, OpSetContextReg, {0x2aa, 0xff});
+    Nop(at, static_cast<std::uint32_t>(cmd + HwInitPacketWords - at) - 1);
+    return HwInitPacketWords;
 }
 APS5_EXPORT("yhFCnaz5daw", Aps5LocalStub_libSceGnmDriver_74_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libSceGnmDriver_74_nid_no_patch(void) {
