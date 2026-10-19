@@ -541,6 +541,11 @@ void testCopies() {
     check(clock32[0] != 0 && clock32[1] == 0xdeadbeef, "32-bit GPU clock COPY_DATA did not write only the low half");
     const auto clockStore =AgcDriver::Pm4::ResolveStore(clockCopy(&clock[0]), state, 64);
     check(clockStore.has_value() && clockStore->Bytes().size() == 8, "GPU clock COPY_DATA did not resolve as an 8-byte store");
+    alignas(8) std::array<std::uint64_t, 3> coreClock{};
+    execute(state, clockCopy(&coreClock[0]));
+    execute(state, makePacket(0x49, {0x00000504, 4u << 29u, low(&coreClock[1]), high(&coreClock[1]), 0, 0, 0}));
+    execute(state, clockCopy(&coreClock[2]));
+    check(coreClock[0] * 8 <= coreClock[1] && coreClock[1] < (coreClock[2] + 1) * 8, "DATA_SEL 4 RELEASE_MEM is not the GPU clock at eight times the rate");
     expectFailure([&] { AgcDriver::Pm4::Validate(makePacket(0x40, {0x1020a, 0, 0, low(&clock[0]), high(&clock[0])}), 0); }, "reference-clock");
     alignas(8) std::array<std::uint32_t, 2> fromRegister{0xdeadbeef, 0xdeadbeef};
     const auto registerCopy = [&](std::uint32_t control, std::uint32_t offset) { return makePacket(0x40, {control, offset, 0, low(fromRegister.data()), high(fromRegister.data())}); };
@@ -1082,8 +1087,7 @@ void testIndexAttributesReadAtExecution() {
 void testReleaseMemDataSelects() {
     alignas(8) static std::uint64_t target = 0;
     const auto release = [](std::uint32_t select) { return makePacket(0x49, {0x0030c514, select << 29u, low(&target), high(&target), 1, 0, 0}); };
-    for (std::uint32_t select = 0; select <= 3; ++select) AgcDriver::Pm4::Validate(release(select), 0);
-    expectFailure([&] { AgcDriver::Pm4::Validate(release(4), 0); }, "64-bit system counter (DATA_SEL 4)");
+    for (std::uint32_t select = 0; select <= 4; ++select) AgcDriver::Pm4::Validate(release(select), 0);
     expectFailure([&] { AgcDriver::Pm4::Validate(release(5), 0); }, "GDS RELEASE_MEM data");
     for (const auto select : {6u, 7u}) expectFailure([&] { AgcDriver::Pm4::Validate(release(select), 0); }, "reserved RELEASE_MEM DATA_SEL");
 }

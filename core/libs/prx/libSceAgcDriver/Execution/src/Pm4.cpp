@@ -145,6 +145,10 @@ std::uint64_t gpuClockCount() {
     return static_cast<std::uint64_t>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now().time_since_epoch()).count() / 10);
 }
 
+std::uint64_t gpuCoreClockCount() {
+    return static_cast<std::uint64_t>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now().time_since_epoch()).count()) * 4u / 5u;
+}
+
 std::uint32_t registerBankBase(std::uint32_t offset) {
     if (offset - ShaderRegisterBase < 0x400u) return ShaderRegisterBase;
     if (offset - ContextRegisterBase < 0x400u) return ContextRegisterBase;
@@ -470,9 +474,8 @@ void Validate(std::span<const std::uint32_t> packet, std::uint32_t queue) {
         case 0x49: {
             size(8);
             const auto dataSelect = packet[2] >> 29u;
-            require(dataSelect != 4, "RELEASE_MEM of the 64-bit system counter (DATA_SEL 4) is not implemented");
             require(dataSelect <= 5, "reserved RELEASE_MEM DATA_SEL");
-            require(dataSelect <= 3, "GDS RELEASE_MEM data is not implemented");
+            require(dataSelect != 5, "GDS RELEASE_MEM data is not implemented");
             require(dataSelect == 0 || address(packet[3], packet[4]) == 0 || (packet[3] & (dataSelect == 1 ? 3u : 7u)) == 0, "misaligned RELEASE_MEM destination");
             break;
         }
@@ -611,10 +614,11 @@ std::optional<LabelWrite> DecodeLabelWrite(std::span<const std::uint32_t> packet
     if (opcode == 0x49 && packet.size() >= 7) {
         const auto dataSelect = packet[2] >> 29u;
         const auto destination = address(packet[3], packet[4]);
-        if (dataSelect == 0 || dataSelect > 3) return std::nullopt;
+        if (dataSelect == 0 || dataSelect > 4) return std::nullopt;
         if (destination == 0) return std::nullopt;
         std::uint64_t value = address(packet[5], packet[6]);
         if (dataSelect == 3) value = static_cast<std::uint64_t>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now().time_since_epoch()).count() / 10);
+        if (dataSelect == 4) value = gpuCoreClockCount();
         LabelWrite label{destination, {}};
         label.inlineSize = dataSelect == 1 ? 4 : 8;
         std::memcpy(label.inlineBytes.data(), &value, label.inlineSize);
@@ -708,7 +712,7 @@ std::vector<PacketStore> DecodeStores(std::span<const std::uint32_t> packet) {
         case 0x49: {
             const auto label = DecodeLabelWrite(packet);
             if (!label.has_value()) return {};
-            if ((packet[2] >> 29u) == 3) return {runTime(label->address, label->Bytes().size())};
+            if ((packet[2] >> 29u) >= 3) return {runTime(label->address, label->Bytes().size())};
             return {known(label->address, label->Bytes())};
         }
         case 0x37: {
@@ -1082,6 +1086,7 @@ void Execute(std::span<const std::uint32_t> packet, QueueState& queue) {
             if (dataSelect == 3) {
                 value = static_cast<std::uint64_t>(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now().time_since_epoch()).count() / 10);
             }
+            if (dataSelect == 4) value = gpuCoreClockCount();
             GuestMemory::Write(destination, std::as_bytes(std::span(&value, 1)).first(dataSelect == 1 ? 4 : 8), dataSelect == 1 ? 4 : 8);
             return;
         }
