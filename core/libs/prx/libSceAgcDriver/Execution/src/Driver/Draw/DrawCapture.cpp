@@ -5,6 +5,18 @@
 #include "prx/libSceAgcDriver/Execution/include/GuestMemory.hpp"
 #include "prx/libSceAgcDriver/Execution/include/Pm4.hpp"
 #include "Optimization/ResourceProgram.hpp"
+#include <string_view>
+
+namespace {
+struct RejectedDescriptorDraw : std::runtime_error {
+    using std::runtime_error::runtime_error;
+};
+
+bool GarbageDescriptorFailure(const char* what) {
+    const std::string_view text(what);
+    return text.find("buffer specialization has an unsupported format") != std::string_view::npos || text.find("runtime image descriptor is invalid") != std::string_view::npos || text.find("guest sampler descriptor") != std::string_view::npos;
+}
+}
 #include <algorithm>
 #include <cstdlib>
 #include <cstring>
