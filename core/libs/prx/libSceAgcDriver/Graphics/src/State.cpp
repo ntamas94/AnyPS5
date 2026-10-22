@@ -80,7 +80,7 @@ VkPolygonMode decodePolygonMode(const Registers& cx, std::uint32_t raster, const
     if (frontDrawn && backDrawn && front != back) throw std::runtime_error("AGC graphics: " + zeroMessage(0x205, raster, "different front and back polygon modes"));
     const auto type = frontDrawn ? front : back;
     if (type == 2) return VK_POLYGON_MODE_FILL;
-    if (state.rectList) throw std::runtime_error("AGC graphics: " + zeroMessage(0x205, raster, "a point or line polygon mode on a rect list"));
+    if (state.rectList) return VK_POLYGON_MODE_FILL;
     if ((raster & 0x3800u) != 0) throw std::runtime_error("AGC graphics: " + zeroMessage(0x205, raster, "depth bias with a point or line polygon mode"));
     if (type == 1) {
         const auto line = find(cx, 0x282);
