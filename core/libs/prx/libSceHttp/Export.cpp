@@ -865,9 +865,4 @@ int APS5_VABI sceHttpSetDelayBuildRequestEnabled(int id, int enabled) {
 #include "prx/libc/include/General.hpp"
 
 extern "C" {
-APS5_EXPORT("16sMmVuOvgU", Aps5LocalStub_libSceHttp_0_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceHttp_0_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceHttpGetMemoryPoolStats [libSceHttp 16sMmVuOvgU]");
-    return 0;
-}
 }

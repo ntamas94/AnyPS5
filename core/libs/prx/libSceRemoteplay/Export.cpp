@@ -227,19 +227,4 @@ int APS5_VABI sceRemoteplaySetRpMode(void) {
 #include "prx/libc/include/General.hpp"
 
 extern "C" {
-APS5_EXPORT("7QLrixwVHcU", Aps5LocalStub_libSceRemoteplay_0_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceRemoteplay_0_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceRemoteplayProhibitStreaming [libSceRemoteplay 7QLrixwVHcU]");
-    return 0;
-}
-APS5_EXPORT("mrNh78tBpmg", Aps5LocalStub_libSceRemoteplay_1_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceRemoteplay_1_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceRemoteplayProhibit [libSceRemoteplay mrNh78tBpmg]");
-    return 0;
-}
-APS5_EXPORT("xQeIryTX7dY", Aps5LocalStub_libSceRemoteplay_2_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceRemoteplay_2_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceRemoteplayApprove [libSceRemoteplay xQeIryTX7dY]");
-    return 0;
-}
 }

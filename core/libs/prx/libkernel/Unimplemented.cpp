@@ -154,23 +154,6 @@ int APS5_VABI sigreturn() {
 #include "prx/libkernel/Pthread/include/Cancel.hpp"
 
 extern "C" {
-APS5_EXPORT("4ZeZWcMsAV0", Aps5LocalStub_libkernel_0_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libkernel_0_nid_no_patch(void (APS5_VABI* routine)(void*), void* argument) {
-    auto* handler = new CleanupHandler{};
-    __pthread_cleanup_push_imp_nid_postfix(routine, argument, handler);
-    handler->onHeap = 1;
-    return 0;
-}
-APS5_EXPORT("RVxb0Ssa5t0", Aps5LocalStub_libkernel_1_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libkernel_1_nid_no_patch(int execute) {
-    __pthread_cleanup_pop_imp_nid_postfix(execute);
-    return 0;
-}
-APS5_EXPORT("Wl2o5hOVZdw", Aps5LocalStub_libkernel_2_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libkernel_2_nid_no_patch(void) {
-    NotImplemented_nid_no_patch("sceKernelPrintBacktraceWithModuleInfo [libkernel Wl2o5hOVZdw]");
-    return 0;
-}
 APS5_EXPORT("WslcK1FQcGI", Aps5LocalStub_libkernel_3_nid_no_patch);
 std::int64_t APS5_VABI Aps5LocalStub_libkernel_3_nid_no_patch(void) {
     return 0;
