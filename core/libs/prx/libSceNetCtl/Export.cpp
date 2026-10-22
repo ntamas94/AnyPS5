@@ -99,6 +99,7 @@ static std::atomic_bool g_initialized{true};
 static std::mutex g_callbackLock;
 static CallbackSlot g_callbacks[MAX_CALLBACKS] = {};
 static CallbackSlot g_callbacksV6[MAX_CALLBACKS] = {};
+static CallbackSlot g_callbacksNpToolkit[MAX_CALLBACKS] = {};
 
 static int RegisterCallback(CallbackSlot (&callbacks)[MAX_CALLBACKS], NetCtlCallback func, void* arg, int* cid) {
     if (!g_initialized.load()) return SCE_NET_CTL_ERROR_NOT_INITIALIZED;
@@ -576,7 +577,6 @@ int APS5_VABI sceNetCtlUnregisterCallbackForLibIpcInt(int callbackId) {
 }
 
 int APS5_VABI sceNetCtlCheckCallbackForNpToolkit(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -893,23 +893,4 @@ int APS5_VABI sceNetCtlGetWifiInfoIpcInt(NetCtlWifiInfo* info) {
     return 0;
 }
 
-}
-
-#include <cstdint>
-#include "SceTypes.hpp"
-#include "prx/libc/include/General.hpp"
-
-extern "C" {
-APS5_EXPORT("2oUqKR5odGc", Aps5LocalStub_libSceNetCtl_0_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceNetCtl_0_nid_no_patch(int cid) {
-    return UnregisterCallback(g_callbacksNpToolkit, cid);
-}
-APS5_EXPORT("u5oqtlIP+Fw", Aps5LocalStub_libSceNetCtl_1_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceNetCtl_1_nid_no_patch() {
-    return 0;
-}
-APS5_EXPORT("wIsKy+TfeLs", Aps5LocalStub_libSceNetCtl_2_nid_no_patch);
-std::int64_t APS5_VABI Aps5LocalStub_libSceNetCtl_2_nid_no_patch(NetCtlCallback func, void*, int* cid) {
-    return RegisterCallback(g_callbacksNpToolkit, func, cid);
-}
 }
