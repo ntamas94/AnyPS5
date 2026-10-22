@@ -547,8 +547,7 @@ int APS5_VABI sceNetCtlUnregisterCallbackV6(int cid) {
 }
 
 int APS5_VABI sceNetCtlRegisterCallbackForNpToolkit(NetCtlCallback callback, void* argument, int* callbackId) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    return RegisterCallback(g_callbacksNpToolkit, callback, argument, callbackId);
 }
 
 int APS5_VABI sceNetCtlRegisterCallbackIpcInt(NetCtlCallback callback, void* argument, int* callbackId) {
