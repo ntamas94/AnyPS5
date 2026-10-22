@@ -522,13 +522,13 @@ void stateTests() {
     for (std::uint32_t i = 0; i < 32; ++i) Require(cleared.context.at(0x191 + i) == 0, "CLEAR_STATE did not reset SPI_PS_INPUT_CNTL");
     queue.shader[0x008] = 0;
     Require(AgcDriver::Graphics::PixelProgramSkipped(queue), "a zero pixel program address was not read as unset");
-    Require(AgcDriver::Graphics::DrawRejection(queue, true).find("writes color") != std::string::npos, "a draw without a pixel program that writes color was accepted");
+    Require(AgcDriver::Graphics::DrawRejection(queue, true).empty(), "a draw without a pixel program that writes color was rejected");
     auto colorDisabled = queue;
     colorDisabled.context[0x202] = colorDisabled.context.at(0x202) & ~0x70u;
     Require(AgcDriver::Graphics::DrawRejection(colorDisabled, true).empty(), "a draw without a pixel program was rejected while CB_COLOR_CONTROL disables color");
     Require(!AgcDriver::Graphics::DecodeState(colorDisabled).hasColorTarget, "a draw with CB_COLOR_CONTROL disabling color decoded a color target");
     colorDisabled.context.erase(0x202);
-    Require(AgcDriver::Graphics::DrawRejection(colorDisabled, true).find("writes color") != std::string::npos, "a draw without a pixel program and an unwritten CB_COLOR_CONTROL was accepted");
+    Require(AgcDriver::Graphics::DrawRejection(colorDisabled, true).empty(), "a draw without a pixel program and an unwritten CB_COLOR_CONTROL was rejected");
     queue.shader.erase(0x008);
     queue.shader.erase(0x009);
     Require(AgcDriver::Graphics::PixelProgramSkipped(queue), "an unwritten pixel program address was not read as unset");
